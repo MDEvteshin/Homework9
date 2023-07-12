@@ -17,26 +17,48 @@
 
 // reverseOrder(n); 
 
-// Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
-// M = 1; N = 15 -> 120
-// M = 4; N = 8. -> 30
+// // Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
+// // M = 1; N = 15 -> 120
+// // M = 4; N = 8. -> 30
 
-int SumMN(int m, int n)
-{
-    int res = m;
-    if (m == n)
-        return 0;
-    else
-    {
-        m++;
-        res = m + SumMN(m, n);
-        return res;
-    }
-}
+// ЭТО ПЕРВЫЙ ВАРИАНТ 
+// int SumMN(int m, int n)
+// {
+//     int res = m;
+//     if (m == n)
+//         return 0;
+//     else
+//     {
+//         m++;
+//         res = m + SumMN(m, n);
+//         return res;
+//     }
+// }
 
-Console.Write("Input number m: ");
-int m = Convert.ToInt32(Console.ReadLine());
-Console.Write("Input number n: ");
-int n = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Input number m: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Input number n: ");
+// int n = Convert.ToInt32(Console.ReadLine());
 
-Console.Write(SumMN(m - 1, n));
+// Console.Write(SumMN(m - 1, n));
+
+// ЭТО ВТОРОЙ ВАРИАНТ 
+// void OrderedNumberSum (int m, int n, int sum)
+// {
+//     if (m > n) 
+//     {
+//         Console.WriteLine($"Sum of natural numbers in order from m to n: {sum}"); 
+//         return;
+//     }
+//     sum = sum + (m++);
+//     OrderedNumberSum(m, n, sum);
+// }
+// Console.Write("Input number m: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Input number n: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// OrderedNumberSum(m, n, 0);
+
+// Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
+// m = 2, n = 3 -> A(m,n) = 9
+// m = 3, n = 2 -> A(m,n) = 29
