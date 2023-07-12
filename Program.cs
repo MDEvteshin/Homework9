@@ -21,21 +21,22 @@
 // M = 1; N = 15 -> 120
 // M = 4; N = 8. -> 30
 
-void FindNum (int m, int n)
+int SumMN(int m, int n)
 {
-    if ( m != n)
+    int res = m;
+    if (m == n)
+        return 0;
+    else
     {
-        if (m<n)
-        {
-            FindNum(m, n - 1);
-            System.Console.Write(n + " ");
-        }
-        else 
-        {
-            System.Console.Write(m + " ");
-            FindNum(m-1, n);
-        }
+        m++;
+        res = m + SumMN(m, n);
+        return res;
     }
-    else System.Console.Write(n + " ");
 }
-FindNum(10, 2); 
+
+Console.Write("Input number m: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input number n: ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+Console.Write(SumMN(m - 1, n));
